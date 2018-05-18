@@ -82,9 +82,10 @@ $col_phones         = $gallery_settings['col_phones'];
 	<select name="light-box" id="light-box">	
 		<option value="0" <?php if($light_box == 0) echo "selected=selected"; ?>>None</option>
 		<option value="6" <?php if($light_box == 6) echo "selected=selected"; ?>>Bootstrap Light Box</option>
+		<option value="9" <?php if($light_box == 9) echo "selected=selected"; ?>>Fancybox Light box</option>
 	</select>
 	<h4>Select a light box style</h4>
-</div><br>
+</div>
 
 <!--Hover Effects Settings Start-->
 <div class="erwg_settings">
@@ -115,7 +116,7 @@ $col_phones         = $gallery_settings['col_phones'];
 </div><br>
 
 <div class="erwg_settings">
-	<p class="bg-title">Hide Thumbnails Spacing</p><br>
+	<p class="bg-title">Hide Thumbnails Spacing</p>
 	<p class=" switch-field em_size_field">
 		<?php if(isset($gallery_settings['no_spacing'])) $no_spacing = $gallery_settings['no_spacing']; else $no_spacing = 0; ?>
 		<input type="radio" name="no_spacing" id="no_spacing1" value="1" <?php if($no_spacing == 1) echo "checked=checked"; ?>>
@@ -123,9 +124,10 @@ $col_phones         = $gallery_settings['col_phones'];
 		<input type="radio" name="no_spacing" id="no_spacing2" value="0" <?php if($no_spacing == 0) echo "checked=checked"; ?>>
 		<label for="no_spacing2">No</label>
 	</p>
+
 	<h4>Hide gap / margin / padding / spacing between gallery thumbnails</h4>
-	
-	<p class="bg-title">5. Hide Thumbnails Title</p><br>
+	<p class="bg-title">Hide Thumbnails Title</p>
+
 	<p class=" switch-field em_size_field">
 		<?php if(isset($gallery_settings['img_title'])) $img_title = $gallery_settings['img_title']; else $img_title = 0; ?>
 		<input type="radio" name="img_title" id="img_title1" value="1" <?php if($img_title == 1) echo "checked=checked"; ?>>
@@ -136,7 +138,7 @@ $col_phones         = $gallery_settings['col_phones'];
 </div>
 
 <div class="erwg_settings">
-	<p class="bg-title">Gallery Thumbnail Order</p><br>
+	<p class="bg-title">Gallery Thumbnail Order</p>
 	<p class="switch-field em_size_field">	
 		<?php if(isset($gallery_settings['thumbnail_order'])) $thumbnail_order = $gallery_settings['thumbnail_order']; else $thumbnail_order = "ASC"; ?>
 		<input type="radio" name="thumbnail_order" id="thumbnail_order1" value="ASC" <?php if($thumbnail_order == "ASC") echo "checked=checked"; ?>>
@@ -144,16 +146,18 @@ $col_phones         = $gallery_settings['col_phones'];
 		<input type="radio" name="thumbnail_order" id="thumbnail_order2" value="DESC" <?php if($thumbnail_order == "DESC") echo "checked=checked"; ?>>
 		<label for="thumbnail_order2">New First</label>
 		<input type="radio" name="thumbnail_order" id="thumbnail_order3" value="RANDOM" <?php if($thumbnail_order == "RANDOM") echo "checked=checked"; ?>>
-		<label for="thumbnail_order3">Random</label><br><br>
+		<label for="thumbnail_order3">Random</label>
 		<h4>Set a image order in which you want to display gallery thumbnails</h4>
 	</p>
 </div>
 <div class="erwg_settings">
-	<p class="bg-title">Custom CSS</p></br>
+	<p class="bg-title">Custom CSS</p>
 	<?php if(isset($gallery_settings['custom-css'])) $custom_css = $gallery_settings['custom-css']; else $custom_css = ""; ?>
+	
 	<h4>Apply own css on image gallery and dont use style tag</h4>
-	<textarea name="custom-css" id="custom-css" style="width: 100%; height: 150px;" placeholder="Type direct CSS code here. Don't use <style>...</style> tag."><?php echo $custom_css; ?></textarea><br>
+	<textarea name="custom-css" id="custom-css" style="width: 100%; height: 150px;" placeholder="Type direct CSS code here. Don't use <style>...</style> tag."><?php echo $custom_css; ?></textarea>
 </div>
+
 <input type="hidden" name="erw-settings" id="erw-settings" value="erw-save-settings">
 
 <!-- Return to Top -->

@@ -1,7 +1,8 @@
 <?php
-/**
- * No Light Box Only Gallery
- */
+
+wp_enqueue_style('erwg-fancybox-css', PLUGIN_URL .'assets/css/jquery.fancybox.min.css');
+wp_enqueue_script('erwg-fancybox-js', PLUGIN_URL .'assets/js/jquery.fancybox.min.js', array('jquery'), '' , true);
+
 $allslides = array(  
 	'p'         => $erw_gallery_id, 
 	'post_type' => 'erw_gallery', 
@@ -49,12 +50,13 @@ while ( $loop->have_posts() ) : $loop->the_post();
 				if($gal_thumb_size == "large") { $thumbnail_url = $large[0]; }
 				if($gal_thumb_size == "full") { $thumbnail_url = $full[0]; } ?>
 
-					<div class="single-image <?php echo $col_large_desktops; ?> <?php echo $col_desktops; ?> <?php echo $col_tablets; ?> <?php echo $col_phones; ?>">
-						<img class="thumbnail <?php echo $image_hover_effect; ?>" src="<?php echo $thumbnail_url; ?>" alt="<?php echo $title; ?>">
-						<?php if($img_title == 0) { ?>
-						<span class="item-title"><?php echo $title; ?></span>
-						<?php } ?>
-					</div>
+<div class="single-image <?php echo $col_large_desktops; ?> <?php echo $col_desktops; ?> <?php echo $col_tablets; ?> <?php echo $col_phones; ?>">					
+	<a data-fancybox="gallery-<?php echo $erw_gallery_id; ?>" data-caption="<?php echo $title; ?>" href="<?php echo $full[0]; ?>" data-type="image">
+		<img class="thumbnail <?php echo $image_hover_effect; ?>" 
+			src="<?php echo $thumbnail_url; ?>" 
+			alt="<?php echo $title; ?>" />
+	</a>
+</div>
 					
 					<?php
 			}// end of attachment foreach
@@ -67,13 +69,12 @@ while ( $loop->have_posts() ) : $loop->the_post();
 <?php
 endwhile;
 wp_reset_query(); ?>
-<script>
-jQuery(document).ready(function () {
-	var $grid = jQuery('.all-images').isotope({
-		itemSelector: '.single-image',
+ ?>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$('[data-fancybox="gallery-<?php echo $erw_gallery_id; ?>"]').fancybox({
+			protect: true
+		});
 	});
-	$grid.imagesLoaded().progress( function() {
-		$grid.isotope('layout');
-	});
-});
 </script>
+<?php 
