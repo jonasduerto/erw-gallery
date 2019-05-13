@@ -51,13 +51,13 @@ while ( $loop->have_posts() ) : $loop->the_post();
 				if($gal_thumb_size == "thumbnail") { $thumbnail_url = $thumbnail[0]; }
 				if($gal_thumb_size == "medium") { $thumbnail_url = $medium[0]; }
 				if($gal_thumb_size == "large") { $thumbnail_url = $large[0]; }
-				if($gal_thumb_size == "full") { $thumbnail_url = $full[0]; } ?>
-
-					<div class="single-image <?php echo $col_large_desktops; ?> <?php echo $col_desktops; ?> <?php echo $col_tablets; ?> <?php echo $col_phones; ?> ">
-						<a href="<?php echo $full[0]; ?>" data-toggle="lightbox" data-gallery="gallery-<?php echo $erw_gallery_id; ?>" data-title="<?php echo $title; ?>">
+				if($gal_thumb_size == "full") { $thumbnail_url = $full[0]; }
+					?>
+					<div class="single-image <?php echo $col_large_desktops; ?> <?php echo $col_desktops; ?> <?php echo $col_tablets; ?> <?php echo $col_phones; ?>">
+						<a href="<?php echo $full[0]; ?>" data-toggle="lightbox" data-gallery="multiimages" data-title="<?php echo $title; ?>">
 							<img class="thumbnail <?php echo $image_hover_effect; ?>" src="<?php echo $thumbnail_url; ?>" alt="<?php echo $title; ?>">
 							<?php if($img_title == 0) { ?>
-								<span class="item-title"><?php echo $title; ?></span>
+							<span class="item-title"><?php echo $title; ?></span>
 							<?php } ?>
 						</a>
 					</div>
@@ -69,8 +69,10 @@ while ( $loop->have_posts() ) : $loop->the_post();
 		} // end of if esle of images avaialble check into gallery
 		?>
 	</div>
-<?php endwhile; wp_reset_query(); ?>
-
+<?php
+endwhile;
+wp_reset_query();
+?>
 <script>
 jQuery(document).ready(function () {
 	var $grid = jQuery('.all-images').isotope({
