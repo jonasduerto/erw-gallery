@@ -1,9 +1,14 @@
+/**
+ * All of the CSS for your admin-specific functionality should be
+ * included in this file.
+ */
+
+
 /*Toggle button on/off css*/
 
 .switch-field {
-  font-family: "Lucida Grande", Tahoma, Verdana, sans-serif;
-  overflow: hidden;
-  padding-left: 18px
+  display: block;
+  position: relative;
 }
 
 .switch-title {
@@ -15,7 +20,7 @@
 }
 
 .switch-field label {
-  float: left;
+
 }
 
 .switch-field label {
@@ -53,13 +58,8 @@
 .switch-field label:last-of-type {
   border-radius: 0 4px 4px 0;
 }
-.em_size_field label {
-	width:130px;
-}
-/**/
 
-/* Rabge bar css*/
-
+/*
 .range-slider {
   width: 40%;
 }
@@ -141,104 +141,20 @@
 input::-moz-focus-inner,
 input::-moz-focus-outer {
   border: 0;
-}
+}*/
 
 
-/* Title Css */
 .bg-title {
     font-size: 15px;
     font-weight: 500;
-    padding: 15px;
-	background-color: #008EC2;
+    padding: 6px 15px;
+    background-color: #008EC2;
     color: #fff;
+    margin: 0px -12px;
 }
-
 .bg-lower-title {
-    font-size: 22px;
-    font-weight: 500;
-	background-color: #F6F6F6;
-    color: #23282D;
-    font-family: icon;
-	padding-left: 10px;
-}
-/*Toggle button on/off css*/
-
-.switch-field {
-  font-family: "Lucida Grande", Tahoma, Verdana, sans-serif;
-  overflow: hidden;
-}
-
-.switch-title {
-  margin-bottom: 6px;
-}
-
-.switch-field input {
-  display: none;
-}
-
-.switch-field label {
-  float: left;
-}
-
-.switch-field label {
-	display: inline-block;
-	width: 60px;
-	font-size: 14px;
-	font-weight: normal;
-	text-align: center;
-	text-shadow: none;
-	padding: 6px 14px;
-	border: 1px solid rgba(0, 0, 0, 0.2);
-	-webkit-transition: all 0.1s ease-in-out;
-	-moz-transition:    all 0.1s ease-in-out;
-	-ms-transition:     all 0.1s ease-in-out;
-	-o-transition:      all 0.1s ease-in-out;
-	transition:         all 0.1s ease-in-out;
-}
-
-.switch-field label:hover {
-    cursor: pointer;
-	
-}
-
-.switch-field input:checked + label {
-  background-color: #669966;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  color:#FFFFFF;
-}
-
-.switch-field label:first-of-type {
-  border-radius: 4px 0 0 4px;
-}
-
-.switch-field label:last-of-type {
-  border-radius: 0 4px 4px 0;
-}
-.em_size_field label {
-	width:120px;
-}
-/**/
-
-
-
-/* Title Css */
-.bg-title {
-    font-size: 15px;
-    font-weight: 500;
-    padding: 15px;
-	background-color: #63ab62;
-    color: #fff;
-}
-
-.bg-lower-title {
-    font-size: 15px;
-    font-weight: 500;
-    padding: 15px;
-	background-color: #F6F6F6;
-    color: #23282D;
-	padding: 5px;
-    font-family: icon;
+    font-size: 18px;
+    font-weight: 900;
 }
 
 .awp-button {
@@ -302,16 +218,114 @@ input::-moz-focus-outer {
     outline: none;
 }
 
-/*======*******========media query=========******=======*/
-@media only screen and (max-width: 359px) {
-    .em_size_field  {
-        width:80%;
-    }
-}
-@media only screen and (max-width: 300px) {
-    #shortcode  {
-        width:100%;
-    }
-}
 
 
+/* Add New Image Slide CSS Admin */
+.new-slider {
+  background-color: #63ab62;
+    box-shadow: 10px 10px 5px 0 #a4eca3;
+    color: #fff !important;
+    cursor: pointer;
+    height: 160px;
+    margin-bottom: 2%;
+    margin-left: 15px;
+    overflow: hidden;
+    padding: 0;
+    text-align: center;
+    width: 160px;
+  -webkit-box-shadow: 10px 10px 5px 0px #a4eca3;
+  -moz-box-shadow: 10px 10px 5px 0px #a4eca3;
+  box-shadow: 10px 10px 5px 0px #a4eca3;
+  cursor:pointer
+}
+
+.new-slider .dashicons {
+  font-size: 80px;
+    margin-top: 8% !important;
+    padding-right: 42% !important;
+    text-align: center !important;
+}
+.new-slider .add-text {
+  font-size: 21px;
+    margin-top: 46% !important;
+    text-align: center !important;
+    width: 100%;
+}
+
+/* All Slider Gallery CSS Admin */
+.sbox {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.sbox .slide {
+    margin: 0 4px 15px 0;
+    width: 19%;
+    cursor: move;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+}
+
+.sbox img {
+  width: 160px;
+  height: 160px;
+  display:block;
+  /*margin-bottom:10px;*/
+}
+
+.new-slide {
+  /*margin: 0 15px 15px 0;*/
+  /*width: 28%;*/
+  /*cursor: move;*/
+
+}
+
+/* Settings CSS */
+.input-text-wrap {
+  margin-top: 30px;
+  margin-left: 15px;
+}
+.input-text-wrap input[type=text] {
+  width: 50%;
+  border: 1px solid #3366FF;
+  border-left: 6px solid #3366FF;
+}
+.input-text-wrap input[type=radio] {
+  border: 1px solid #3366FF;
+  margin-bottom: 6px;
+}
+.input-text-wrap label {
+  font-size: 14px;
+  font-weight: bolder;
+}
+/* Delete All Slide Button */
+#remove-all-slides {
+  color: #FFF;
+  border-color: #D9534F;
+  background: #D9534F;
+  background-color: #D9534F;
+  -webkit-box-shadow: inset 0 1px 0 #D9534F,0 1px 0 rgba(0,0,0,.08);
+  box-shadow: inset 0 1px 0 #D9534F,0 1px 0 rgba(0,0,0,.08);
+}
+#add-new-slider{
+  color: #FFF;
+  border-color: #0085bb;
+  background: #0085bb;
+  background-color: #0085bb;
+  -webkit-box-shadow: inset 0 1px 0 #0085bb,0 1px 0 rgba(0,0,0,.08);
+  box-shadow: inset 0 1px 0 #0085bb,0 1px 0 rgba(0,0,0,.08);
+  margin-right: 12px;
+}
+#remove-slide {
+    color: #FFF;
+    border-color: #D9534F;
+    background: #D9534F;
+    background-color: #D9534F;
+    -webkit-box-shadow: inset 0 1px 0 #D9534F, 0 1px 0 rgba(0,0,0,.08);
+    box-shadow: inset 0 1px 0 #D9534F, 0 1px 0 rgba(0,0,0,.08);
+    position: absolute;
+    top: 0;
+    right: 0;
+}
